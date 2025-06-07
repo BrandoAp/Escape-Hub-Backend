@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 
 import weatherRoutes from './routes/weatherRoutes.js';
-import tripMapRoutes from './routes/tripMapRoutes.js';
+import geoNamesRoutes from './routes/geoNamesRoutes.js';
 
 dotenv.config();
 
@@ -14,7 +14,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/api/weather', weatherRoutes);
-app.use('/api/places', tripMapRoutes);
+app.use('/api/places', geoNamesRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);

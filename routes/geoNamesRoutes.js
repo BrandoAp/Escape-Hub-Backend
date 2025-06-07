@@ -1,9 +1,7 @@
 import express from 'express';
-import { getPlaces } from '../controllers/tripMapController.js';
+import { getPlaces } from '../controllers/geoNamesController.js';
 
 const router = express.Router();
 
 router.get('/', getPlaces);
-export default router; 
-
-
+export default router;

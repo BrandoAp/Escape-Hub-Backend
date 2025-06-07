@@ -1,22 +1,17 @@
 import fetch from "node-fetch";
 
-const URL = 'https://eu-central-1.hapio.net/v1/locations';
+const URL = 'https://secure.geonames.org/searchJSON?';
 
 const getPlaces = async (req, res) => {
     const { name } = req.query;
-    const apiKey = process.env.HAPIO_API_KEY;
+    const username = process.env.GEONAMES_USERNAME;
 
     if(!name) {
         return res.status(400).json({ error: 'Name parameter is required' });
     }
 
-
     try{
-        const response = await fetch(`${URL}?name[eq]=${encodeURIComponent(name)}`,{
-            headers: {
-                Authorization: `Bearer ${apiKey}`
-            },
-        });
+        const response = await fetch(`${URL}q=${encodeURIComponent(name)}&username=${username}`);
 
         const data = await response.json();
 
@@ -24,10 +19,12 @@ const getPlaces = async (req, res) => {
             return res.status(404).json({ error: data.message || 'Location not found' });
         }
         res.json(data);
+    
     } catch (error) {
         console.error('Error fetching location data:', error);
         res.status(500).json({ error: 'Internal server error' });
     }
 };
 
-export { getPlaces };
+
+export { getPlaces, };
