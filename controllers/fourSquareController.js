@@ -14,7 +14,7 @@ const getFourSquareData = async (req, res) => {
         const response = await fetch(`${URL}?query=${encodeURIComponent(nameCity)}`, {
             headers: {
                 'Accept': 'application/json',
-                'Authorization': `Bearer ${apiKey}`,
+                'Authorization': `${apiKey}`,
             }
         });
 
@@ -31,4 +31,4 @@ const getFourSquareData = async (req, res) => {
     }
 }
 
-export default getFourSquareData;
+export { getFourSquareData };

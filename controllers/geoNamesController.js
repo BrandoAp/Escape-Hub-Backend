@@ -27,4 +27,4 @@ const getPlaces = async (req, res) => {
 };
 
 
-export { getPlaces, };
+export { getPlaces };
