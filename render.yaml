@@ -10,7 +10,7 @@ services:
     envVars:
       - key: PORT
         value: 3000
-      - key: WEATHER_API_KEY
+      - key: OPEN_WEATHER_API_KEY
         sync: false
       - key: GEONAMES_USERNAME
         sync: false
