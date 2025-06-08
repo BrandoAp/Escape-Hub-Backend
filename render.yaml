@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: Escape-Hub-Backend
+    env: node
+    region: oregon
+    plan: free
+    branch: master
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: PORT
+        value: 3000
+      - key: WEATHER_API_KEY
+        sync: false
+      - key: GEONAMES_USERNAME
+        sync: false
+      - key: FOODS_PLACES_API_KEY
+        sync: false
