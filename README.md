@@ -44,8 +44,8 @@ project-backend/
 1. Clona el repositorio
 
 ```bash
-git clone https://github.com/tu-usuario/project-backend.git
-cd project-backend
+git clone https://github.com/BrandoAp/Escape-Hub-Backend.git
+cd Escape-Hub-Backend
 ```
 
 2. Instala dependencias
