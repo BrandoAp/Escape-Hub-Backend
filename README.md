@@ -70,7 +70,7 @@ node server.js
 
 Consulta el clima actual de una ciudad.
 
-### 🔸 `GET /api/places?name=`nombre`
+### 🔸 `GET /api/places?name=nombre`
 
 Busca lugares geográficos con GeoNames.
 
